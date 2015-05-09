@@ -20,31 +20,32 @@ $(document).ready(function(){
   		$("span#count").replaceWith("<span id = 'count'>0</span>"); // resets counter to 0
   		$("ul.guessBox li").remove(); // rests user inputs
   		compNum = Math.floor(Math.random() * 101); //generates new number
+  		$("input#userGuess.text").val(""); // clears input box
   	
   	}
   	var guess = function (input) { // function to show what needs to be logged
-  			var distance = input - compNum; // checks difference between the user input and the computer generated number
-  			if (distance < -1) { // checks to make sure difference is a positive number
-  				distance *= -1 // if not, multiply by -1 to make the distance positive
-	  		}
-  			if (distance > 50) { // checks distance to decide what hint to show user
-  			$(feedback).replaceWith("<h2 id='feedback'>Ice Cold</h2>");
-  			}
-	  		else if (distance > 30) { // checks distance to decide what hint to show user
-  				$(feedback).replaceWith("<h2 id='feedback'>Cold</h2>");
-  			}
-  			else if (distance > 20) { // checks distance to decide what hint to show user
-	  			$(feedback).replaceWith("<h2 id='feedback'>Warm</h2>");
-  			}
-  			else if (distance > 10) { // checks distance to decide what hint to show user
-  				$(feedback).replaceWith("<h2 id='feedback'>Hot</h2>");
-	  		}
-  			else if (distance >= 1) { // checks distance to decide what hint to show user
-  				$(feedback).replaceWith("<h2 id='feedback'>Very Hot</h2>");
-  			}
-	  		else { // checks to see if user won
-  				$(feedback).replaceWith("<h2 id='feedback'>You got it!</h2>");
-  			}
+  		var distance = input - compNum; // checks difference between the user input and the computer generated number
+  		if (distance < -1) { // checks to make sure difference is a positive number
+  			distance *= -1 // if not, multiply by -1 to make the distance positive
+	  	}
+  		if (distance > 50) { // checks distance to decide what hint to show user
+  		$(feedback).replaceWith("<h2 id='feedback'>Ice Cold</h2>");
+  		}
+	  	else if (distance > 30) { // checks distance to decide what hint to show user
+  			$(feedback).replaceWith("<h2 id='feedback'>Cold</h2>");
+ 		}
+  		else if (distance > 20) { // checks distance to decide what hint to show user
+ 			$(feedback).replaceWith("<h2 id='feedback'>Warm</h2>");
+  		}
+  		else if (distance > 10) { // checks distance to decide what hint to show user
+  			$(feedback).replaceWith("<h2 id='feedback'>Hot</h2>");
+	 	}
+  		else if (distance >= 1) { // checks distance to decide what hint to show user
+  			$(feedback).replaceWith("<h2 id='feedback'>Very Hot</h2>");
+  		}
+	  	else { // checks to see if user won
+  			$(feedback).replaceWith("<h2 id='feedback'>You got it!</h2>");
+  		}
   	};
   	
   	$("a.new").mousedown(function() { // calls reset function if 'new game' is clicked
