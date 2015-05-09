@@ -14,6 +14,15 @@ $(document).ready(function(){
   	/*---Game Code---*/
   	var compNum = Math.floor(Math.random()* 101);
   	var count = 0;
+  	var reset = function() {
+  		count = 0;
+  		$("span#count").replaceWith("<span id = 'count'>0</span>");
+  		$("ul.guessBox li").remove();
+  		compNum = Math.floor(Math.random() * 101);
+  	}
+  	$("a.new").mousedown(function() {
+  		return reset();
+  	});
 	$("input#guessButton.button").mousedown(function() {
 		var userInput = $("input#userGuess.text").val();
   		var feedback = "h2#feedback";
@@ -45,14 +54,12 @@ $(document).ready(function(){
   					$(feedback).replaceWith("<h2 id='feedback'>You got it!</h2>");
   				}
   			};
+  			return guess(userInput);	
   		}
   		else {
   			alert("Please enter a whole number between 1 and 100.");
   		}
-	return guess(userInput);
 });
-
-
 });
 
 
