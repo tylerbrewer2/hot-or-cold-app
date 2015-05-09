@@ -13,9 +13,12 @@ $(document).ready(function(){
 
   	/*---Game Code---*/
   	var compNum = Math.floor(Math.random()* 101);
+  	var count = 0;
 	$("input#guessButton.button").mousedown(function() {
- 		var userInput = $("input#userGuess.text").val();
+		var userInput = $("input#userGuess.text").val();
   		var feedback = "h2#feedback";
+ 		count += 1;
+ 		$("span#count").replaceWith("<span id = 'count'>" + count + "</span>");
  	 	var guess = function (input) {
   			var distance = input - compNum;
   			if (distance < -1) {
