@@ -19,6 +19,7 @@ $(document).ready(function(){
   		var feedback = "h2#feedback";
  		count += 1;
  		$("span#count").replaceWith("<span id = 'count'>" + count + "</span>");
+ 		$("ul#guessList").prepend("<li>" + userInput + "</li>");
  	 	var guess = function (input) {
   			var distance = input - compNum;
   			if (distance < -1) {
