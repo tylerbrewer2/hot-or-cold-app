@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	var feedback = "h2#feedback";
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
     	$(".overlay").fadeIn(1000);
@@ -19,25 +20,24 @@ $(document).ready(function(){
   			distance *= -1
   		}
   		if (distance > 50) {
-  			console.log("Ice cold");
+  			$(feedback).replaceWith("<h2 id='feedback'>Ice Cold</h2>");
   		}
   		else if (distance > 30) {
-  			console.log("Cold");
+  			$(feedback).replaceWith("<h2 id='feedback'>Cold</h2>");
   		}
   		else if (distance > 20) {
-  			console.log("Warm");
+  			$(feedback).replaceWith("<h2 id='feedback'>Warm</h2>");
   		}
   		else if (distance > 10) {
-  			console.log("Hot");
+  			$(feedback).replaceWith("<h2 id='feedback'>Hot/h2>");
   		}
   		else if (distance >= 1) {
-  			console.log("very hot");
+  			$(feedback).replaceWith("<h2 id='feedback'>Very Hot</h2>");
   		}
   		else {
-  			console.log("You got it!")
+  			$(feedback).replaceWith("<h2 id='feedback'>You got it!</h2>");
   		}
   	}
-  	console.log(guess(1));
 
 });
 
